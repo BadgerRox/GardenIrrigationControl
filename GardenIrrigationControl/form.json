@@ -1,0 +1,987 @@
+{
+    "elements": [
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.location_weather.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.location_weather.description"
+                },
+                {
+                    "type": "Select",
+                    "name": "SystemType",
+                    "caption": "form_json.location_weather.system_type",
+                    "width": "400px",
+                    "options": [
+                        {
+                            "caption": "form_json.location_weather.system_type.lawn",
+                            "value": "lawn"
+                        },
+                        {
+                            "caption": "form_json.location_weather.system_type.beds_shrubs",
+                            "value": "beds_shrubs"
+                        },
+                        {
+                            "caption": "form_json.location_weather.system_type.raised_beds",
+                            "value": "raised_beds"
+                        }
+                    ]
+                },
+                {
+                    "type": "SelectLocation",
+                    "name": "Location",
+                    "caption": "form_json.location_weather.location",
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "TemperatureVarID",
+                    "caption": "form_json.location_weather.temperature",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "HumidityVarID",
+                    "caption": "form_json.location_weather.humidity",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "RainVarID",
+                    "caption": "form_json.location_weather.rain_rate",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "RainDayVarID",
+                    "caption": "form_json.location_weather.daily_rain",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "PressureVarID",
+                    "caption": "form_json.location_weather.pressure",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectVariable",
+                    "name": "WindVarID",
+                    "caption": "form_json.location_weather.wind_speed",
+                    "requiredLogging": 3,
+                    "width": "400px"
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "NumberSpinner",
+                            "name": "WindHeight",
+                            "caption": "form_json.location_weather.wind_height",
+                            "minimum": 0.1,
+                            "maximum": 100,
+                            "step": 0.1,
+                            "digits": 1,
+                            "suffix": "form_json.unit.meter",
+                            "width": "400px"
+                        },
+                        {
+                            "type": "Label",
+                            "caption": "form_json.location_weather.wind_height_hint",
+                            "italic": true
+                        }
+                    ]
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "WindMaxSpeed",
+                    "caption": "form_json.location_weather.wind_limit",
+                    "minimum": 1,
+                    "maximum": 200,
+                    "step": 1,
+                    "digits": 0,
+                    "suffix": "form_json.unit.kilometers_per_hour",
+                    "width": "400px"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "RainForecast",
+                    "caption": "form_json.location_weather.rain_forecast"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.baseline.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.baseline.description"
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Select",
+                            "name": "BaselineStartMonth",
+                            "caption": "form_json.baseline.start_month",
+                            "options": [
+                                {
+                                    "caption": "form_json.month.january",
+                                    "value": 1
+                                },
+                                {
+                                    "caption": "form_json.month.february",
+                                    "value": 2
+                                },
+                                {
+                                    "caption": "form_json.month.march",
+                                    "value": 3
+                                },
+                                {
+                                    "caption": "form_json.month.april",
+                                    "value": 4
+                                },
+                                {
+                                    "caption": "form_json.month.may",
+                                    "value": 5
+                                },
+                                {
+                                    "caption": "form_json.month.june",
+                                    "value": 6
+                                },
+                                {
+                                    "caption": "form_json.month.july",
+                                    "value": 7
+                                },
+                                {
+                                    "caption": "form_json.month.august",
+                                    "value": 8
+                                },
+                                {
+                                    "caption": "form_json.month.september",
+                                    "value": 9
+                                },
+                                {
+                                    "caption": "form_json.month.october",
+                                    "value": 10
+                                },
+                                {
+                                    "caption": "form_json.month.november",
+                                    "value": 11
+                                },
+                                {
+                                    "caption": "form_json.month.december",
+                                    "value": 12
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Select",
+                            "name": "BaselineEndMonth",
+                            "caption": "form_json.baseline.end_month",
+                            "options": [
+                                {
+                                    "caption": "form_json.month.january",
+                                    "value": 1
+                                },
+                                {
+                                    "caption": "form_json.month.february",
+                                    "value": 2
+                                },
+                                {
+                                    "caption": "form_json.month.march",
+                                    "value": 3
+                                },
+                                {
+                                    "caption": "form_json.month.april",
+                                    "value": 4
+                                },
+                                {
+                                    "caption": "form_json.month.may",
+                                    "value": 5
+                                },
+                                {
+                                    "caption": "form_json.month.june",
+                                    "value": 6
+                                },
+                                {
+                                    "caption": "form_json.month.july",
+                                    "value": 7
+                                },
+                                {
+                                    "caption": "form_json.month.august",
+                                    "value": 8
+                                },
+                                {
+                                    "caption": "form_json.month.september",
+                                    "value": 9
+                                },
+                                {
+                                    "caption": "form_json.month.october",
+                                    "value": 10
+                                },
+                                {
+                                    "caption": "form_json.month.november",
+                                    "value": 11
+                                },
+                                {
+                                    "caption": "form_json.month.december",
+                                    "value": 12
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Button",
+                            "caption": "form_json.baseline.calculate",
+                            "onClick": "GIC_CalculateBaselineETO($id, $BaselineStartMonth, $BaselineEndMonth);",
+                            "confirm": "form_json.confirm.calculate_baseline_eto"
+                        }
+                    ]
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "BaselineETO",
+                    "caption": "form_json.baseline.eto",
+                    "minimum": 0.1,
+                    "maximum": 50,
+                    "step": 0.1,
+                    "digits": 1,
+                    "suffix": "form_json.unit.mm_per_day",
+                    "width": "auto"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.irrigation_runtime.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.irrigation_runtime.description"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "IrrigationInterval",
+                    "caption": "form_json.irrigation_runtime.interval",
+                    "minimum": 1,
+                    "maximum": 14,
+                    "step": 1,
+                    "digits": 0,
+                    "suffix": "form_json.unit.days",
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectTime",
+                    "name": "IrrigationStartTime",
+                    "caption": "form_json.irrigation_runtime.start_time",
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectTime",
+                    "name": "IrrigationMaxRuntime",
+                    "caption": "form_json.irrigation_runtime.maximum_runtime",
+                    "width": "400px"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "IrrigationMinRuntime",
+                    "caption": "form_json.irrigation_runtime.minimum_zone_runtime",
+                    "minimum": 1,
+                    "maximum": 60,
+                    "step": 0.1,
+                    "digits": 1,
+                    "suffix": "form_json.unit.minutes",
+                    "width": "400px"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "IrrigationZoneMaxRuntime",
+                    "caption": "form_json.irrigation_runtime.maximum_zone_runtime",
+                    "minimum": 1,
+                    "maximum": 360,
+                    "step": 1,
+                    "digits": 0,
+                    "suffix": "form_json.unit.minutes",
+                    "width": "400px"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.soil_moisture.title",
+            "items": [
+                {
+                    "type": "SelectVariable",
+                    "name": "GlobalSoilMoistureVarID",
+                    "caption": "form_json.soil_moisture.global_sensor"
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "NumberSpinner",
+                            "name": "SoilMinMoisture",
+                            "caption": "form_json.soil_moisture.threshold",
+                            "minimum": 20,
+                            "maximum": 100,
+                            "step": 1,
+                            "digits": 0,
+                            "suffix": "form_json.unit.percent"
+                        },
+                        {
+                            "type": "Select",
+                            "name": "SoilMoistureMode",
+                            "caption": "form_json.soil_moisture.mode",
+                            "options": [
+                                {
+                                    "caption": "form_json.soil_moisture.mode.start_only",
+                                    "value": 0
+                                },
+                                {
+                                    "caption": "form_json.soil_moisture.mode.start_and_stop",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Label",
+                    "caption": "form_json.soil_moisture.description",
+                    "italic": "true"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.lawn_cooling.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.lawn_cooling.description"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "CoolingEnable",
+                    "caption": "form_json.lawn_cooling.enabled",
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectTime",
+                    "name": "CoolingStartTime",
+                    "caption": "form_json.lawn_cooling.start_time",
+                    "width": "400px"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "CoolingTime",
+                    "caption": "form_json.lawn_cooling.runtime",
+                    "minimum": 1,
+                    "maximum": 20,
+                    "step": 1,
+                    "digits": 0,
+                    "suffix": "form_json.unit.minutes",
+                    "width": "400px"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "CoolingTemp",
+                    "caption": "form_json.lawn_cooling.temperature_condition",
+                    "minimum": 20,
+                    "maximum": 50,
+                    "step": 1,
+                    "digits": 0,
+                    "suffix": "form_json.unit.celsius",
+                    "width": "400px"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "CoolingPushEnable",
+                    "caption": "form_json.lawn_cooling.push_enabled",
+                    "width": "400px"
+                },
+                {
+                    "type": "SelectInstance",
+                    "name": "CoolingPushInstance",
+                    "caption": "form_json.lawn_cooling.push_instance",
+                    "width": "400px",
+                    "validModules": [
+                        "{B5B875BB-9B76-45FD-4E67-2607E45B3AC4}"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.zone.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.zone.description"
+                },
+                {
+                    "type": "Tree",
+                    "name": "ZonesTree",
+                    "rowCount": 4,
+                    "add": true,
+                    "delete": true,
+                    "sort": {
+                        "column": "Sequence",
+                        "direction": "ascending"
+                    },
+                    "columns": [
+                        {
+                            "caption": "form_json.zone.active",
+                            "name": "Active",
+                            "width": "30px",
+                            "add": false,
+                            "edit": {
+                                "type": "CheckBox"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.sequence",
+                            "name": "Sequence",
+                            "width": "50px",
+                            "add": 0,
+                            "edit": {
+                                "type": "NumberSpinner",
+                                "digits": 0,
+                                "step": 1,
+                                "minimum": 1,
+                                "maximum": 100
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.name",
+                            "name": "Name",
+                            "width": "200px",
+                            "add": "Zone A",
+                            "edit": {
+                                "type": "ValidationTextBox"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.precipitation_rate",
+                            "name": "sprinklerPrecipitationRate",
+                            "width": "80px",
+                            "add": 0,
+                            "edit": {
+                                "type": "NumberSpinner",
+                                "digits": 2,
+                                "step": 0.01,
+                                "minimum": 0.1,
+                                "maximum": 20,
+                                "suffix": "form_json.unit.mm_per_minute"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.slope",
+                            "name": "Slope",
+                            "width": "80px",
+                            "add": 0,
+                            "edit": {
+                                "type": "NumberSpinner",
+                                "digits": 0,
+                                "step": 1,
+                                "minimum": 0,
+                                "maximum": 80,
+                                "suffix": "form_json.unit.percent"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.orientation",
+                            "name": "Orientation",
+                            "width": "50px",
+                            "add": "N",
+                            "edit": {
+                                "type": "Select",
+                                "options": [
+                                    {
+                                        "label": "form_json.zone.orientation.north",
+                                        "value": "N"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.north_east",
+                                        "value": "NE"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.east",
+                                        "value": "E"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.south_east",
+                                        "value": "SE"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.south",
+                                        "value": "S"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.south_west",
+                                        "value": "SW"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.west",
+                                        "value": "W"
+                                    },
+                                    {
+                                        "label": "form_json.zone.orientation.north_west",
+                                        "value": "NW"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.valve",
+                            "name": "ValveVarID",
+                            "width": "150px",
+                            "add": 0,
+                            "edit": {
+                                "type": "SelectVariable"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.soil_moisture_sensor",
+                            "name": "SoilMoistureVarID",
+                            "width": "150px",
+                            "add": 0,
+                            "edit": {
+                                "type": "SelectVariable"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.use_global_soil_moisture",
+                            "name": "UseGlobalSoilMoisture",
+                            "width": "30px",
+                            "add": false,
+                            "edit": {
+                                "type": "CheckBox"
+                            }
+                        },
+                        {
+                            "caption": "form_json.zone.use_lawn_cooling",
+                            "name": "UseCooling",
+                            "width": "30px",
+                            "add": false,
+                            "edit": {
+                                "type": "CheckBox"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.maintenance.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.maintenance.description"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "SystemAutoEnable",
+                    "caption": "form_json.maintenance.automatic_irrigation",
+                    "onChange": "GIC_ToggleSystemAutoEnable($id, $SystemAutoEnable);"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "SystemMaintenanceEnable",
+                    "caption": "form_json.maintenance.mode",
+                    "onChange": "GIC_ToggleSystemMaintenanceEnable($id, $SystemMaintenanceEnable);"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "form_json.debug.title",
+            "items": [
+                {
+                    "type": "Label",
+                    "caption": "form_json.debug.description"
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.reset_eto_history",
+                            "onClick": "GIC_ResetEToHistory($id);",
+                            "name": "BtnResetEToHistory"
+                        },
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.reset_water_balance_history",
+                            "onClick": "GIC_ResetWaterBalanceHistory($id);",
+                            "name": "BtnResetWaterBalanceHistory"
+                        },
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.reset_water_balance_history_and_anchor",
+                            "onClick": "GIC_ResetWaterBalanceHistoryAndAnchor($id);",
+                            "name": "BtnResetWaterBalanceHistoryAndAnchor",
+                            "confirm": "form_json.confirm.reset_water_storage"
+                        }
+                    ]
+                },
+                {
+                    "type": "RowLayout",
+                    "items": [
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.attributes_output",
+                            "onClick": "GIC_DebugAttributesOutput($id);",
+                            "name": "DebugAttributesOutput"
+                        },
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.rain_forecast_output",
+                            "onClick": "GIC_DebugRainForecastOutput($id);",
+                            "name": "DebugRainForecastOutput"
+                        },
+                        {
+                            "type": "Button",
+                            "caption": "form_json.debug.test_push_notification",
+                            "onClick": "GIC_SendTestPushNotification($id);",
+                            "name": "BtnSendTestPushNotification",
+                            "confirm": "form_json.confirm.test_push_notification"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [],
+    "attributes": [
+        {
+            "name": "DailyEToHistory",
+            "type": "string",
+            "default": "{}"
+        },
+        {
+            "name": "ActiveErrors",
+            "type": "string",
+            "default": "[]"
+        },
+        {
+            "name": "WaterBalanceManager",
+            "type": "string",
+            "default": "[]"
+        },
+        {
+            "name": "WaterStorageAnchor",
+            "type": "string",
+            "default": "{}"
+        }
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active",
+            "caption": "status.ready"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "status.waiting_for_configuration"
+        },
+        {
+            "code": 200,
+            "icon": "error",
+            "caption": "status.configuration.invalid_system_type"
+        },
+        {
+            "code": 201,
+            "icon": "error",
+            "caption": "status.configuration.invalid_location"
+        },
+        {
+            "code": 202,
+            "icon": "error",
+            "caption": "status.configuration.invalid_temperature_variable"
+        },
+        {
+            "code": 203,
+            "icon": "error",
+            "caption": "status.configuration.invalid_humidity_variable"
+        },
+        {
+            "code": 204,
+            "icon": "error",
+            "caption": "status.configuration.invalid_pressure_variable"
+        },
+        {
+            "code": 205,
+            "icon": "error",
+            "caption": "status.configuration.invalid_wind_variable"
+        },
+        {
+            "code": 206,
+            "icon": "error",
+            "caption": "status.configuration.invalid_wind_height"
+        },
+        {
+            "code": 207,
+            "icon": "error",
+            "caption": "status.configuration.invalid_max_wind_speed"
+        },
+        {
+            "code": 208,
+            "icon": "error",
+            "caption": "status.configuration.invalid_rain_variable"
+        },
+        {
+            "code": 209,
+            "icon": "error",
+            "caption": "status.configuration.invalid_daily_rain_archive"
+        },
+        {
+            "code": 210,
+            "icon": "error",
+            "caption": "status.configuration.invalid_baseline_eto"
+        },
+        {
+            "code": 211,
+            "icon": "error",
+            "caption": "status.configuration.invalid_baseline_months"
+        },
+        {
+            "code": 220,
+            "icon": "error",
+            "caption": "status.configuration.invalid_global_soil_moisture_variable"
+        },
+        {
+            "code": 221,
+            "icon": "error",
+            "caption": "status.configuration.invalid_soil_moisture_threshold"
+        },
+        {
+            "code": 222,
+            "icon": "error",
+            "caption": "status.configuration.invalid_soil_moisture_mode"
+        },
+        {
+            "code": 230,
+            "icon": "error",
+            "caption": "status.configuration.invalid_irrigation_interval"
+        },
+        {
+            "code": 231,
+            "icon": "error",
+            "caption": "status.configuration.invalid_irrigation_start_time"
+        },
+        {
+            "code": 232,
+            "icon": "error",
+            "caption": "status.configuration.invalid_irrigation_max_runtime"
+        },
+        {
+            "code": 233,
+            "icon": "error",
+            "caption": "status.configuration.invalid_irrigation_min_runtime"
+        },
+        {
+            "code": 234,
+            "icon": "error",
+            "caption": "status.configuration.invalid_zone_max_runtime"
+        },
+        {
+            "code": 235,
+            "icon": "error",
+            "caption": "status.configuration.zone_max_runtime_below_minimum"
+        },
+        {
+            "code": 236,
+            "icon": "error",
+            "caption": "status.configuration.irrigation_max_runtime_too_short"
+        },
+        {
+            "code": 240,
+            "icon": "error",
+            "caption": "status.configuration.invalid_lawn_cooling_start_time"
+        },
+        {
+            "code": 241,
+            "icon": "error",
+            "caption": "status.configuration.invalid_lawn_cooling_runtime"
+        },
+        {
+            "code": 242,
+            "icon": "error",
+            "caption": "status.configuration.invalid_lawn_cooling_temperature"
+        },
+        {
+            "code": 243,
+            "icon": "error",
+            "caption": "status.configuration.overlapping_lawn_cooling_and_irrigation"
+        },
+        {
+            "code": 244,
+            "icon": "error",
+            "caption": "status.configuration.invalid_lawn_cooling_push_instance"
+        },
+        {
+            "code": 245,
+            "icon": "error",
+            "caption": "status.configuration.invalid_lawn_cooling_visualization_instance"
+        },
+        {
+            "code": 250,
+            "icon": "error",
+            "caption": "status.zone.none_configured"
+        },
+        {
+            "code": 251,
+            "icon": "error",
+            "caption": "status.zone.name_too_short"
+        },
+        {
+            "code": 252,
+            "icon": "error",
+            "caption": "status.zone.invalid_orientation"
+        },
+        {
+            "code": 253,
+            "icon": "error",
+            "caption": "status.zone.invalid_valve"
+        },
+        {
+            "code": 254,
+            "icon": "error",
+            "caption": "status.zone.invalid_soil_moisture_sensor"
+        },
+        {
+            "code": 255,
+            "icon": "error",
+            "caption": "status.zone.global_soil_moisture_missing"
+        },
+        {
+            "code": 256,
+            "icon": "error",
+            "caption": "status.zone.invalid_sequence"
+        },
+        {
+            "code": 257,
+            "icon": "error",
+            "caption": "status.zone.invalid_precipitation_rate"
+        },
+        {
+            "code": 258,
+            "icon": "error",
+            "caption": "status.zone.invalid_slope"
+        },
+        {
+            "code": 259,
+            "icon": "error",
+            "caption": "status.zone.duplicate_sequence"
+        },
+        {
+            "code": 260,
+            "icon": "error",
+            "caption": "status.zone.duplicate_valve"
+        },
+        {
+            "code": 261,
+            "icon": "error",
+            "caption": "status.zone.valve_not_boolean"
+        },
+        {
+            "code": 300,
+            "icon": "error",
+            "caption": "status.runtime.auto_and_maintenance_conflict"
+        },
+        {
+            "code": 301,
+            "icon": "error",
+            "caption": "status.runtime.archive_handler_missing"
+        },
+        {
+            "code": 400,
+            "icon": "error",
+            "caption": "status.runtime.valve_open_failed"
+        },
+        {
+            "code": 401,
+            "icon": "error",
+            "caption": "status.runtime.valve_not_closed"
+        },
+        {
+            "code": 420,
+            "icon": "error",
+            "caption": "status.history.eto_access_failed"
+        },
+        {
+            "code": 421,
+            "icon": "error",
+            "caption": "status.history.eto_incomplete"
+        },
+        {
+            "code": 430,
+            "icon": "error",
+            "caption": "status.calculation.eto_failed"
+        },
+        {
+            "code": 440,
+            "icon": "error",
+            "caption": "status.calculation.valve_runtime_failed"
+        },
+        {
+            "code": 450,
+            "icon": "error",
+            "caption": "status.calculation.rain_history_failed"
+        },
+        {
+            "code": 460,
+            "icon": "error",
+            "caption": "status.calculation.zone_archive_failed"
+        },
+        {
+            "code": 461,
+            "icon": "error",
+            "caption": "status.calculation.water_storage_write_failed"
+        },
+        {
+            "code": 470,
+            "icon": "error",
+            "caption": "status.calculation.rain_forecast_failed"
+        },
+        {
+            "code": 480,
+            "icon": "error",
+            "caption": "status.push.invalid_instance_type"
+        },
+        {
+            "code": 481,
+            "icon": "error",
+            "caption": "status.push.title_too_long"
+        },
+        {
+            "code": 482,
+            "icon": "error",
+            "caption": "status.push.text_too_long"
+        },
+        {
+            "code": 483,
+            "icon": "error",
+            "caption": "status.push.invalid_type"
+        },
+        {
+            "code": 484,
+            "icon": "error",
+            "caption": "status.push.target_missing"
+        },
+        {
+            "code": 485,
+            "icon": "error",
+            "caption": "status.push.send_failed"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - GardenIrrigationControl
+        - libs       
+    scanDirectories:  
+        - tests/stubs
+    scanFiles:
+        - tests/phpstan/stubs/symcon-functions.php
+    phpVersion: 80500
