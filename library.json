@@ -1,0 +1,12 @@
+{
+  "id": "{71FF9886-3148-02F4-2514-3E4FDAC7D19B}",
+  "name": "Garden Irrigation Control",
+  "author": "BadgerRox",
+  "url": "https://github.com/BadgerRox/GardenIrrigationControl",
+  "compatibility": {
+    "version": "9.0"
+  },
+  "version": "0.2.0-beta",
+  "build": 27,
+  "date": 1791274966
+}

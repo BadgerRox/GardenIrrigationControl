@@ -1,0 +1,12 @@
+{
+    "id": "{80D10BCC-111D-A74E-EEDA-B550185A2DCD}",
+    "name": "Garden Irrigation Control",
+    "type": 4,
+    "vendor": "BadgerRox",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "GIC",
+    "url": "https://github.com/BadgerRox/GardenIrrigationControl/"
+}

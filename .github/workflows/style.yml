@@ -1,0 +1,30 @@
+name: Check Style
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  style-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+      with:
+        submodules: recursive      
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.5'
+        tools: php-cs-fixer, phpstan
+        coverage: none
+
+    - name: Check code style (CS Fixer)
+      run: php-cs-fixer fix --config=.style/.php-cs-fixer.php --dry-run --diff --allow-risky=yes --allow-unsupported-php-version=yes
+
+    - name: Static analysis (PHPStan)
+      run: phpstan analyse

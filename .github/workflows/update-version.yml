@@ -1,0 +1,65 @@
+name: Update IP-Symcon library metadata
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: library-version-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bump-version:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update library.json metadata
+        id: metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ ! -f library.json ]; then
+            echo "library.json not found" >&2
+            exit 1
+          fi
+
+          TIMESTAMP=$(date -u +%s)
+          BUILD_NUM="${GITHUB_RUN_NUMBER}"
+
+          CURRENT_BUILD=$(jq -r '.build // 0' library.json)
+          CURRENT_DATE=$(jq -r '.date // 0' library.json)
+
+          if [ "$CURRENT_BUILD" = "$BUILD_NUM" ] && [ "$CURRENT_DATE" = "$TIMESTAMP" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          jq --arg build "$BUILD_NUM" --arg date "$TIMESTAMP" \
+            '.build = ($build | tonumber) | .date = ($date | tonumber)' \
+            library.json > library.json.tmp
+
+          mv library.json.tmp library.json
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push updated metadata
+        if: steps.metadata.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add library.json
+          git diff --cached --quiet || git commit -m "chore(library): update build metadata [skip ci]"
+          git push

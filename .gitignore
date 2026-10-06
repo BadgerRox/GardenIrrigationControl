@@ -1,0 +1,5 @@
+AGENTS.md
+*.cache
+.style
+tests/stubs
+specs/
